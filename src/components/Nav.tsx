@@ -4,7 +4,7 @@ const Nav = () => {
     return (
       <div className="bg-purple-100">
         <nav className="container m-auto flex justify-between">
-          <img src={logo} alt="" />
+          <img src={logo} alt="Logo image doesn't exist" />
           <ul className="flex justify-between align-center gap-4">
             <li>Home</li>
             <li>Technologies</li>
