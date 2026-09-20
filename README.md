@@ -1,20 +1,20 @@
-# 🚀 DevStack - Tech Stack Builder
+# DevStack - Tech Stack Builder
 
 A modern, interactive, and fully responsive web application designed for developers to explore software technologies, filter choices by categories, and build their custom development stack in real-time.
 
 ---
 
-## 🛠️ Technologies Used
+## Technologies Used
 
-- **Frontend Framework**: [React 19](https://react.dev/) with [TypeScript](https://www.typescriptlang.org/)
-- **Build Tool**: [Vite](https://vitejs.dev/)
-- **Styling**: [TailwindCSS](https://tailwindcss.com/) & [DaisyUI](https://daisyui.com/)
-- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
-- **Notifications**: [React Toastify](https://fkhadra.github.io/react-toastify/)
+- **Frontend Framework**: React and TypeScript
+- **Build Tool**: Vite
+- **Styling**: TailwindCSS and DaisyUI
+- **Icons**: React Icons
+- **Notifications**: React Toastify
 
 ---
 
-## ✨ 3 Key Features
+## Key Features
 
 1. **Interactive Technology Catalog**:
    - Displays technology cards dynamically with badges, difficulty levels, star ratings, and descriptions fetched from JSON data.
@@ -29,18 +29,18 @@ A modern, interactive, and fully responsive web application designed for develop
 
 ---
 
-## ❓ React Questions & Answers
+## React Questions & Answers
 
 ### 1. What is JSX, and why is it used in React?
-> **Answer**: JSX (JavaScript XML) is a syntax extension that allows developers to write HTML-like structures directly inside JavaScript code. It is used in React because it makes component templates easy to write, read, and visualize compared to plain JavaScript methods.
+> **Answer**: JSX is a JavaScript file where we can write html and css code
 
 ---
 
 ### 2. What is the difference between props and state?
 > **Answer**: 
-> - **Props** (short for properties) are read-only inputs passed from a parent component down to a child component.
-> - **State** is local data managed internally within a component that can change over time. When state updates, React re-renders the component to reflect changes in the UI.
+> - **Props** are read only inputs. we used when we passed input from parent folder to child folder
 
+> - **State** is like variable, it contain a value and update according to the user action. 
 ---
 
 ### 3. What does the `useState` hook do, and where did you use it in this project?
@@ -51,7 +51,7 @@ A modern, interactive, and fully responsive web application designed for develop
 ---
 
 ### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
-> **Answer**: The `useEffect` hook handles side effects in functional components (such as API data fetching or subscriptions) after the component renders. Loading JSON data inside an effect ensures that data fetching occurs cleanly without blocking or looping component rendering cycles.
+> **Answer**: The `useEffect` hook handles side effects in functional components like api data fetching after the component renders.  
 
 ---
 
@@ -61,22 +61,8 @@ A modern, interactive, and fully responsive web application designed for develop
 ---
 
 ### 6. What is conditional rendering? Show one place you used it (example: the empty stack message).
-> **Answer**: Conditional rendering means displaying different components or UI elements based on specific conditions or state values.
-> 
-> **Project Example**: In `YourStack.tsx`:
-> ```tsx
-> {count === 0 ? (
->   <div className="empty-state">
->     <h3>Your stack is empty</h3>
->     <p>Pick technology cards from the left to build your stack.</p>
->   </div>
-> ) : (
->   <div className="stack-item-list">
->     {/* Render list of selected technology items */}
->   </div>
-> )}
-> ```
-
+> **Answer**: Conditional rendering means displaying different components  based on the specific condition
+> we used conditional rendering to disable a card after select it.
 ---
 
 ### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
