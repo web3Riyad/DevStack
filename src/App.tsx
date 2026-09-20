@@ -3,6 +3,8 @@ import Hero from "./components/Hero";
 import Footer from "./components/Footer";
 import Card from "./card/Card";
 import { Suspense } from "react";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const CardFetch = async () => {
   const res = await fetch("/Data.json");
@@ -11,7 +13,6 @@ const CardFetch = async () => {
 }
 function App() {
   const cardPromise = CardFetch();
-  // console.log(cardPromise);
   return (
     <section>
       <Nav></Nav>
@@ -43,6 +44,7 @@ function App() {
 
       {/* footer */}
       <Footer></Footer>
+      <ToastContainer />
     </section>
   );
 }

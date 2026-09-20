@@ -1,10 +1,16 @@
 import type { CardType } from '../types/CardType';
-import { FaStar } from "react-icons/fa6";
+import { FaStar, FaCheck } from "react-icons/fa6";
 
-const Card_container = (singleCard: CardType) => {
+interface CardContainerProps {
+    singleCard: CardType;
+    onAddToStack: (card: CardType) => void;
+    isAdded: boolean;
+}
+
+const Card_container = ({ singleCard, onAddToStack, isAdded }: CardContainerProps) => {
     return (
         <div className="h-full w-full">
-            <div key={singleCard.id} className="h-full">
+            <div className="h-full">
                 <div className="singleCard-wrapper h-full">
                     <div className="singleCard flex flex-col justify-between h-full w-full rounded-xl border border-gray-200 bg-white p-5 shadow-sm hover:shadow-md transition-all duration-200">
                         <div>
@@ -36,8 +42,23 @@ const Card_container = (singleCard: CardType) => {
                             </div>
 
                             <div className="mt-4">
-                                <button className="w-full rounded-xl bg-black px-4 py-3 text-sm font-semibold text-white transition-all duration-200 hover:bg-gray-800 active:scale-[0.98]">
-                                    Add to Stack
+                                <button
+                                    onClick={() => onAddToStack(singleCard)}
+                                    disabled={isAdded}
+                                    className={`w-full rounded-xl px-4 py-3 text-sm font-semibold transition-all duration-200 flex items-center justify-center gap-2 ${
+                                        isAdded
+                                            ? "bg-gray-200 text-gray-500 cursor-not-allowed border border-gray-300"
+                                            : "bg-black text-white hover:bg-gray-800 active:scale-[0.98] cursor-pointer"
+                                    }`}
+                                >
+                                    {isAdded ? (
+                                        <>
+                                            <FaCheck className="text-xs text-emerald-600" />
+                                            <span>✓ Added to Stack</span>
+                                        </>
+                                    ) : (
+                                        "Add to Stack"
+                                    )}
                                 </button>
                             </div>
                         </div>
